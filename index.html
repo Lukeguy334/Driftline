@@ -167,10 +167,29 @@
   }
   .svc:hover{transform:translateY(-4px);box-shadow:var(--shadow);border-color:transparent}
   .svc-ic{width:46px;height:46px;border-radius:12px;background:var(--ink);display:grid;place-items:center;margin-bottom:18px}
-  .svc-ic svg{width:24px;height:24px;stroke:var(--spray)}
+  .svc-ic svg{width:24px;height:24px;display:block}
   .svc h3{font-size:1.3rem;margin-bottom:.5rem}
   .svc p{color:#56635f;font-size:.98rem}
   .svc .price{display:block;margin-top:1rem;font-family:var(--display);font-weight:600;color:var(--teal)}
+  .svc-details{margin-top:1rem;border-top:1px solid var(--line);padding-top:.9rem}
+  .svc-details summary{
+    list-style:none;cursor:pointer;font-weight:600;font-size:.92rem;color:var(--ink);
+    display:flex;align-items:center;justify-content:space-between;gap:.5rem;
+  }
+  .svc-details summary::-webkit-details-marker{display:none}
+  .svc-details summary .chev{transition:transform .2s ease;flex:none}
+  .svc-details[open] summary .chev{transform:rotate(180deg)}
+  .svc-details ul{list-style:none;margin:.9rem 0 0;padding:0}
+  .svc-details li{
+    position:relative;padding-left:1.5rem;margin-bottom:.55rem;font-size:.9rem;color:#56635f;line-height:1.45;
+  }
+  .svc-details li::before{
+    content:"";position:absolute;left:0;top:.35rem;width:9px;height:9px;
+    border-right:2px solid var(--teal);border-bottom:2px solid var(--teal);
+    transform:rotate(45deg);border-radius:1px;
+  }
+  .svc-details .fineprint{padding-left:0;color:#8a948f;font-style:italic;font-size:.84rem;margin-top:.2rem}
+  .svc-details .fineprint::before{display:none}
 
   /* ---------- process (a real sequence -> numbering earns its place) ---------- */
   .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
@@ -298,22 +317,57 @@
     </div>
     <div class="svc-grid">
       <div class="svc">
-        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 18h18M5 18V9l7-4 7 4v9" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7M5 9.5V20h14V9.5M9 20v-5h6v5" stroke="#46c3b4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>House soft washing</h3>
         <p>Low-pressure cleaning that strips mold, mildew, and algae off siding and stucco without forcing water behind it.</p>
         <span class="price">from $199</span>
+        <details class="svc-details">
+          <summary>What's included
+            <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1d7a78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <ul>
+            <li>Siding and stucco walls reachable from the ground</li>
+            <li>Soffits, eaves, and the outside of gutters at ground level</li>
+            <li>Around windows, doors, and entryways</li>
+            <li>Window glass on request, where it's low-pressure safe</li>
+            <li class="fineprint">Anything needing a ladder isn't included.</li>
+          </ul>
+        </details>
       </div>
       <div class="svc">
-        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M6 20l2-12h8l2 12M9 8V5h6v3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M4 19h16M4 19l2-6h12l2 6M7 13l1.5-4h7L17 13" stroke="#46c3b4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Driveways &amp; concrete</h3>
-        <p>Surface-cleaned to an even, streak-free finish — driveways, sidewalks, patios, and pool decks.</p>
+        <p>Surface-cleaned to an even, streak-free finish that lifts dirt, mold, and stains off flat concrete.</p>
         <span class="price">from $99</span>
+        <details class="svc-details">
+          <summary>What's included
+            <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1d7a78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <ul>
+            <li>Driveway, front walkway, and entry</li>
+            <li>Even, streak-free surface-cleaned finish</li>
+            <li>Spot treatment on oil and tough stains</li>
+            <li class="fineprint">Large sidewalks, patios, or pool decks priced as add-ons by area.</li>
+          </ul>
+        </details>
       </div>
       <div class="svc">
-        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M12 3v4M5 7l3 3M19 7l-3 3M4 14h16l-1.5 6h-13L4 14z" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+        <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 10l5-4 5 4M5 8.5V18h6V8.5M13 18h8M13 18v-4h8v4M15 14v-2.5l3-2 3 2V14" stroke="#46c3b4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Full exterior package</h3>
         <p>House wash plus driveway and walkways together — the fastest way to reset your whole curb appeal.</p>
         <span class="price">from $299</span>
+        <details class="svc-details">
+          <summary>What's included
+            <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1d7a78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </summary>
+          <ul>
+            <li>Full house soft wash, ground level</li>
+            <li>Driveway and walkways</li>
+            <li>Patio, pool deck, and other flat areas within reason</li>
+            <li>Best value when you want the whole property reset</li>
+            <li class="fineprint">Very large homes or lots quoted separately.</li>
+          </ul>
+        </details>
       </div>
     </div>
   </div>
