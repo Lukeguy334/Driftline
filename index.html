@@ -246,12 +246,50 @@
   .foot p{font-size:.9rem}
   .foot a:hover{color:#fff}
 
+  /* ---------- announcement banner ---------- */
+  .promo-bar{
+    background:var(--spray);color:var(--ink);text-align:center;
+    padding:.7rem 1rem;font-size:.92rem;font-weight:600;line-height:1.4;
+  }
+  .promo-bar code{
+    background:var(--ink);color:var(--spray);padding:.15rem .5rem;border-radius:6px;
+    font-family:var(--body);font-weight:700;letter-spacing:.03em;
+  }
+  .promo-bar small{display:block;font-weight:500;opacity:.8;font-size:.8rem;margin-top:.15rem}
+
+  /* ---------- add-on checkboxes in form ---------- */
+  .addons{margin-bottom:16px}
+  .addons > span{display:block;font-size:.85rem;font-weight:600;margin-bottom:.5rem}
+  .addon{
+    display:flex;align-items:center;gap:.6rem;padding:.55rem .7rem;border:1.5px solid var(--line);
+    border-radius:10px;margin-bottom:.5rem;cursor:pointer;font-size:.92rem;transition:border-color .15s;
+  }
+  .addon:hover{border-color:var(--teal)}
+  .addon input{width:auto;margin:0;accent-color:var(--teal)}
+  .addon .ao-price{margin-left:auto;color:var(--teal);font-weight:600;font-size:.88rem}
+  .text-note{font-size:.82rem;color:var(--teal);font-weight:600;margin:-.4rem 0 1rem 2.2rem}
+
+  /* ---------- policies ---------- */
+  .policies{background:var(--sand)}
+  .pol-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  @media(max-width:880px){.pol-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:520px){.pol-grid{grid-template-columns:1fr}}
+  .pol{background:var(--white);border:1px solid var(--line);border-radius:14px;padding:22px}
+  .pol h3{font-size:1.05rem;margin-bottom:.4rem}
+  .pol p{color:#56635f;font-size:.9rem;line-height:1.5}
+
   @media (prefers-reduced-motion: reduce){
     *{transition:none!important;scroll-behavior:auto!important}
   }
 </style>
 </head>
 <body>
+
+<!-- ================= PROMO BANNER ================= -->
+<div class="promo-bar">
+  First 10 customers: mention code <code>FIRSTWASH15</code> for 15% off your first clean.
+  <small>New customers only · minimum $99 · limited to our first 10 jobs</small>
+</div>
 
 <!-- ================= NAV ================= -->
 <header>
@@ -262,8 +300,9 @@
     <nav class="nav-links">
       <a href="#services">Services</a>
       <a href="#process">How it works</a>
+      <a href="#policies">Pricing &amp; offers</a>
       <!-- REPLACE phone number below (keep the tel: format with no spaces) -->
-      <a class="btn btn-primary" href="tel:+14012563393">Get a free quote</a>
+      <a class="btn btn-primary" href="sms:+14012563393">Get a free quote</a>
     </nav>
   </div>
 </header>
@@ -320,12 +359,13 @@
         <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 11l9-7 9 7M5 9.5V20h14V9.5M9 20v-5h6v5" stroke="#46c3b4" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>House soft washing</h3>
         <p>Low-pressure cleaning that strips mold, mildew, and algae off siding and stucco without forcing water behind it.</p>
-        <span class="price">from $199</span>
+        <span class="price">from $259</span>
         <details class="svc-details">
           <summary>What's included
             <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1d7a78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </summary>
           <ul>
+            <li>Single-story house — $259 &nbsp;·&nbsp; Two-story — $419</li>
             <li>Siding and stucco walls reachable from the ground</li>
             <li>Soffits, eaves, and the outside of gutters at ground level</li>
             <li>Around windows, doors, and entryways</li>
@@ -344,6 +384,7 @@
             <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1d7a78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </summary>
           <ul>
+            <li>1-car — $99 &nbsp;·&nbsp; 2-car — $159 &nbsp;·&nbsp; Large — $229</li>
             <li>Driveway, front walkway, and entry</li>
             <li>Even, streak-free surface-cleaned finish</li>
             <li>Spot treatment on oil and tough stains</li>
@@ -355,16 +396,17 @@
         <div class="svc-ic"><svg viewBox="0 0 24 24" fill="none"><path d="M3 10l5-4 5 4M5 8.5V18h6V8.5M13 18h8M13 18v-4h8v4M15 14v-2.5l3-2 3 2V14" stroke="#46c3b4" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
         <h3>Full exterior package</h3>
         <p>House wash plus driveway and walkways together — the fastest way to reset your whole curb appeal.</p>
-        <span class="price">from $299</span>
+        <span class="price">from $399</span>
         <details class="svc-details">
           <summary>What's included
             <svg class="chev" width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6 9l6 6 6-6" stroke="#1d7a78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </summary>
           <ul>
+            <li>Single-story — $399 &nbsp;·&nbsp; Two-story — $529</li>
             <li>Full house soft wash, ground level</li>
             <li>Driveway and walkways</li>
             <li>Patio, pool deck, and other flat areas within reason</li>
-            <li>Best value when you want the whole property reset</li>
+            <li>Saves ~15-20% vs booking each service separately</li>
             <li class="fineprint">Very large homes or lots quoted separately.</li>
           </ul>
         </details>
@@ -398,9 +440,9 @@
 
       <div class="contact-row">
         <svg viewBox="0 0 24 24" fill="none"><path d="M5 4h4l2 5-3 2a14 14 0 006 6l2-3 5 2v4a2 2 0 01-2 2A17 17 0 013 6a2 2 0 012-2z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
-        <!-- REPLACE phone -->
-        <a href="tel:+14012563393">(401) 256-3393</a>
+        <a href="sms:+14012563393">(401) 256-3393</a>
       </div>
+      <p class="text-note">Texting is fastest — send your address and what you need.</p>
       <div class="contact-row">
         <svg viewBox="0 0 24 24" fill="none"><path d="M3 6h18v12H3z" stroke="currentColor" stroke-width="1.8"/><path d="M3 7l9 6 9-6" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
         <!-- REPLACE email -->
@@ -427,12 +469,27 @@
       <div class="field">
         <label for="service">What needs cleaning?</label>
         <select id="service" name="service">
-          <option>Driveway / concrete</option>
-          <option>House soft wash</option>
-          <option>Full exterior package</option>
-          <option>Patio / pool deck</option>
-          <option>Something else</option>
+          <option>Driveway / concrete — 1-car ($99)</option>
+          <option>Driveway / concrete — 2-car ($159)</option>
+          <option>Driveway / concrete — large ($229)</option>
+          <option>House soft wash — single-story ($259)</option>
+          <option>House soft wash — two-story ($419)</option>
+          <option>Full exterior — single-story ($399)</option>
+          <option>Full exterior — two-story ($529)</option>
+          <option>Not sure / something else</option>
         </select>
+      </div>
+      <div class="addons">
+        <span>Add any extras (priced in your quote)</span>
+        <label class="addon"><input type="checkbox" name="addon" value="Patio / pool deck" /> Patio / pool deck <span class="ao-price">from $89</span></label>
+        <label class="addon"><input type="checkbox" name="addon" value="Sidewalk / walkway" /> Extended sidewalk / walkway <span class="ao-price">$59</span></label>
+        <label class="addon"><input type="checkbox" name="addon" value="Fence" /> Fence <span class="ao-price">from $89</span></label>
+        <label class="addon"><input type="checkbox" name="addon" value="Screen enclosure / lanai" /> Screen enclosure / lanai <span class="ao-price">$139</span></label>
+        <label class="addon"><input type="checkbox" name="addon" value="Small area" /> Small area (garage door, entry pad) <span class="ao-price">$39</span></label>
+      </div>
+      <div class="field">
+        <label for="promo">Promo code (optional)</label>
+        <input id="promo" name="promo" type="text" placeholder="e.g. FIRSTWASH15" />
       </div>
       <div class="field">
         <label for="msg">Address or details</label>
@@ -441,6 +498,34 @@
       <button class="btn btn-dark" type="submit">Request my quote</button>
       <p class="form-note">No spam. We only use this to send your quote.</p>
     </form>
+  </div>
+</section>
+
+<!-- ================= POLICIES ================= -->
+<section class="policies" id="policies">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="sec-eyebrow">Good to know</p>
+      <h2>How we keep it simple and fair.</h2>
+    </div>
+    <div class="pol-grid">
+      <div class="pol">
+        <h3>$99 minimum</h3>
+        <p>Every job starts at $99. It keeps pricing fair and worth the trip out to you.</p>
+      </div>
+      <div class="pol">
+        <h3>Launch offer</h3>
+        <p>Our first 10 customers get 15% off the first clean with code FIRSTWASH15. New customers, $99 minimum.</p>
+      </div>
+      <div class="pol">
+        <h3>Bundle &amp; save</h3>
+        <p>The full exterior package runs about 15-20% less than booking the house and driveway separately.</p>
+      </div>
+      <div class="pol">
+        <h3>Flat, up-front pricing</h3>
+        <p>You get a clear quote before we start. No hourly surprises, and we walk the finished job with you.</p>
+      </div>
+    </div>
   </div>
 </section>
 
